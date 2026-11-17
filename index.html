@@ -1,92 +1,663 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>Дом на Невском | Коттедж посуточно в Новосибирске</title>
-<link rel="stylesheet" href="style.css">
+<title>Дом на Невском — коттедж на сутки в Новосибирске</title>
+<meta name="description" content="Коттедж «Дом на Невском» на улице Александра Невского, 30 в Новосибирске. Посуточная аренда: бассейн, сауна, бильярд, мангальная зона. До 30 гостей, 3 спальни, 6 спальных мест.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Дом на Невском">
+<meta property="og:title" content="Дом на Невском — коттедж на сутки в Новосибирске">
+<meta property="og:description" content="Бассейн, сауна, бильярд, мангальная зона. До 30 гостей, 3 спальни, 6 спальных мест. Сутки от 20 000 ₽.">
+<meta property="og:url" content="https://avknob-jpg.github.io/dom-na-nevskom-demo/">
+<meta property="og:image" content="https://avknob-jpg.github.io/dom-na-nevskom-demo/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · macrostructure: Photographic · genre: editorial · theme: Atelier-warm
+ * nav: N10 floating-on-scroll-morph · footer: Ft1 mast-headed
+ * enrichment: none (real photography supplied by the client)
+ * Hallmark · pre-emit critique: P5 H5 E4 S4 R4 V5 */
+:root{
+  --paper:        #f3efe6;
+  --paper-2:      #e9e3d7;
+  --ink:          #16130f;
+  --ink-soft:     #5c5446;
+  --on-dark:      #f3efe6;
+  --on-dark-soft: rgba(243,239,230,.66);
+  --line:         rgba(22,19,15,.16);
+  --line-dark:    rgba(243,239,230,.18);
+  --accent:       #8a4b24;
+  --accent-soft:  #c98d5f;
+  --font-display: "Prata", "Times New Roman", serif;
+  --font-body:    "Inter", "Segoe UI", system-ui, sans-serif;
+  --gutter:       clamp(18px, 4vw, 56px);
+  --measure:      62ch;
+  --radius:       2px;
+  --ease:         cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  margin:0;overflow-x:clip;
+  background:var(--paper);color:var(--ink);
+  font-family:var(--font-body);font-weight:400;font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:400;font-style:normal;line-height:1.06;margin:0;letter-spacing:-.01em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+.wrap{width:min(100% - var(--gutter)*2, 1240px);margin-inline:auto}
+.eyebrow{
+  font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+
+/* ── nav ────────────────────────────────────────────── */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:18px var(--gutter);
+  color:var(--on-dark);
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background .45s var(--ease),color .45s var(--ease),padding .35s var(--ease),border-color .45s var(--ease);
+}
+.nav__brand{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-family:var(--font-display);font-size:19px;letter-spacing:.02em;
+  text-decoration:none;white-space:nowrap;
+}
+.nav__links{display:flex;gap:30px;align-items:center}
+.nav__links a{
+  text-decoration:none;font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+  color:inherit;opacity:.82;padding:6px 0;
+  border-bottom:1px solid transparent;transition:opacity .25s,border-color .25s;
+}
+.nav__links a:hover,.nav__links a:focus-visible{opacity:1;border-bottom-color:currentColor}
+.nav__phone{
+  display:inline-flex;align-items:center;gap:8px;
+  text-decoration:none;font-size:14px;letter-spacing:.01em;
+  border:1px solid currentColor;border-radius:var(--radius);
+  padding:10px 16px;min-height:44px;
+  transition:background .3s var(--ease),color .3s var(--ease);
+}
+.nav.is-stuck{
+  background:rgba(243,239,230,.97);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  color:var(--ink);border-bottom-color:var(--line);padding-top:12px;padding-bottom:12px;
+}
+.nav.is-stuck .nav__phone{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.nav.is-stuck .nav__phone:hover{background:var(--accent);border-color:var(--accent)}
+.nav__tel-ico{display:none;width:18px;height:18px}
+@media (max-width:900px){
+  .nav__links{display:none}
+  .nav__tel-text{display:none}
+  .nav__tel-ico{display:block}
+  .nav__phone{padding:0;width:44px;height:44px;justify-content:center}
+}
+
+/* ── hero ───────────────────────────────────────────── */
+.hero{position:relative;min-height:min(94svh,900px);display:flex;align-items:flex-end;overflow:hidden;background:#0d0c0a}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%}
+.hero__shade{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to top, rgba(11,9,7,.93) 0%, rgba(11,9,7,.66) 26%, rgba(11,9,7,.18) 54%, rgba(11,9,7,.30) 100%),
+    linear-gradient(105deg, rgba(11,9,7,.72) 0%, rgba(11,9,7,.30) 44%, rgba(11,9,7,0) 74%);
+}
+.hero__inner{
+  position:relative;z-index:2;width:min(100% - var(--gutter)*2,1240px);margin-inline:auto;
+  padding:0 0 clamp(34px,6vw,68px);color:var(--on-dark);
+}
+.hero__kicker{
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(243,239,230,.8);
+  margin-bottom:clamp(14px,2.4vw,26px);
+}
+.hero__title{
+  font-size:clamp(46px,8.6vw,124px);line-height:.94;letter-spacing:-.02em;
+  max-width:14ch;text-wrap:balance;overflow-wrap:anywhere;min-width:0;
+}
+.hero__sub{
+  font-family:var(--font-display);font-size:clamp(20px,2.6vw,30px);
+  letter-spacing:.08em;text-transform:uppercase;margin-top:clamp(8px,1.4vw,14px);
+  color:rgba(243,239,230,.9);
+}
+.hero__lede{
+  margin-top:clamp(16px,2.2vw,24px);max-width:46ch;
+  font-size:clamp(15px,1.5vw,18px);font-weight:300;color:rgba(243,239,230,.86);
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,3vw,34px)}
+.hero__meta{
+  position:absolute;right:var(--gutter);bottom:clamp(34px,6vw,68px);z-index:2;
+  text-align:right;color:rgba(243,239,230,.82);font-size:13px;line-height:1.5;
+}
+.hero__meta strong{display:block;font-family:var(--font-display);font-size:26px;color:var(--on-dark)}
+@media (max-width:760px){.hero__meta{display:none}}
+
+/* ── buttons ────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 26px;border-radius:var(--radius);
+  font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;border:1px solid transparent;
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .2s var(--ease);
+}
+.btn--solid{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn--solid:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:var(--ink)}
+.btn--ghost{background:transparent;color:var(--on-dark);border-color:rgba(243,239,230,.45)}
+.btn--ghost:hover{border-color:var(--on-dark);background:rgba(243,239,230,.1)}
+.btn--dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn--dark:hover{background:var(--accent);border-color:var(--accent)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px}
+
+/* ── intro band ─────────────────────────────────────── */
+.band{padding:clamp(64px,9vw,124px) 0}
+.band--tight{padding:clamp(40px,5vw,64px) 0}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(28px,6vw,96px);align-items:start}
+.intro h2{font-size:clamp(30px,4vw,52px);line-height:1.1;max-width:12ch}
+.intro__body{max-width:var(--measure);font-size:clamp(16px,1.4vw,18px);color:var(--ink-soft)}
+.intro__body p + p{margin-top:1em}
+.intro__body strong{color:var(--ink);font-weight:500}
+@media (max-width:860px){.intro{grid-template-columns:1fr}}
+
+/* ── facts strip ────────────────────────────────────── */
+.facts{background:var(--ink);color:var(--on-dark)}
+.facts__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line-dark)}
+.facts__grid > div{background:var(--ink);padding:clamp(22px,3vw,38px) clamp(16px,2vw,28px)}
+.facts__num{font-family:var(--font-display);font-size:clamp(34px,4.4vw,58px);line-height:1;display:block}
+.facts__label{margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-soft)}
+@media (max-width:760px){.facts__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ── prices ─────────────────────────────────────────── */
+.prices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:clamp(28px,4vw,48px)}
+.price{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(24px,3.2vw,40px);background:var(--paper);
+  display:flex;flex-direction:column;gap:14px;
+  transition:border-color .3s var(--ease),background .3s var(--ease);
+}
+.price:hover{border-color:rgba(22,19,15,.4)}
+.price__days{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+.price__value{font-family:var(--font-display);font-size:clamp(38px,5vw,62px);line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.price__unit{font-size:13px;color:var(--ink-soft);letter-spacing:.04em}
+.price--weekend{background:var(--ink);color:var(--on-dark);border-color:var(--ink)}
+.price--weekend .price__days,.price--weekend .price__unit{color:var(--on-dark-soft)}
+.price--weekend:hover{border-color:var(--accent)}
+.note{
+  margin-top:20px;padding-top:20px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:10px 34px;font-size:14px;color:var(--ink-soft);
+}
+.note b{color:var(--ink);font-weight:500}
+@media (max-width:720px){.prices{grid-template-columns:1fr}}
+
+/* ── amenities ──────────────────────────────────────── */
+.amen{background:var(--paper-2)}
+.amen__grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;background:var(--line);margin-top:clamp(28px,4vw,44px);
+  border:1px solid var(--line);
+}
+.amen__item{background:var(--paper-2);padding:clamp(20px,2.6vw,32px);min-height:150px}
+.amen__item h3{font-size:clamp(19px,2vw,24px);line-height:1.2}
+.amen__item p{margin-top:8px;font-size:14px;line-height:1.55;color:var(--ink-soft)}
+.amen__foot{margin-top:24px;font-size:14px;color:var(--ink-soft);max-width:70ch}
+@media (max-width:980px){.amen__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){
+  .amen__grid{grid-template-columns:1fr}
+  .amen__item{min-height:0}
+}
+
+/* ── gallery ────────────────────────────────────────── */
+.gallery{background:var(--ink);color:var(--on-dark)}
+.gallery .eyebrow{color:var(--on-dark-soft)}
+.gallery__head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.gallery__head h2{font-size:clamp(30px,4vw,52px)}
+.gallery__hint{font-size:13px;color:var(--on-dark-soft)}
+.grid-gallery{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(150px,15vw,215px);
+  gap:10px;margin-top:clamp(26px,4vw,42px);
+}
+.shot{position:relative;margin:0;overflow:hidden;background:#1d1a16;border:0;padding:0;cursor:zoom-in;display:block;width:100%;height:100%}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease),opacity .4s}
+.shot:hover img{transform:scale(1.04)}
+.shot figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:26px 14px 12px;
+  font-size:12px;letter-spacing:.04em;color:rgba(243,239,230,.94);text-align:left;
+  background:linear-gradient(to top,rgba(10,9,7,.72),rgba(10,9,7,0));
+  pointer-events:none;
+}
+.shot--w2{grid-column:span 2}
+.shot--h2{grid-row:span 2}
+@media (max-width:900px){
+  .grid-gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(140px,22vw,190px)}
+}
+@media (max-width:560px){
+  .grid-gallery{grid-template-columns:1fr;grid-auto-rows:auto}
+  .shot--w2,.shot--h2{grid-column:auto;grid-row:auto}
+  .shot{aspect-ratio:4/3;height:auto}
+}
+
+/* ── quote ──────────────────────────────────────────── */
+.quote{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(28px,6vw,80px);align-items:end}
+.quote blockquote{margin:0}
+.quote p.q{
+  font-family:var(--font-display);font-size:clamp(24px,3.4vw,42px);line-height:1.28;
+  letter-spacing:-.01em;text-wrap:pretty;
+}
+.quote__who{margin-top:22px;font-size:13px;letter-spacing:.06em;color:var(--ink-soft)}
+.quote__stars{letter-spacing:.3em;font-size:13px;color:var(--accent);margin-bottom:14px}
+.quote__side{border-left:1px solid var(--line);padding-left:clamp(18px,3vw,32px);font-size:14px;color:var(--ink-soft)}
+.quote__side b{display:block;font-family:var(--font-display);font-size:clamp(28px,3vw,40px);color:var(--ink);line-height:1.1;margin-bottom:6px}
+@media (max-width:820px){.quote{grid-template-columns:1fr}.quote__side{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:20px}}
+
+/* ── contact ────────────────────────────────────────── */
+.contact{background:var(--ink);color:var(--on-dark)}
+.contact__inner{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(30px,6vw,88px)}
+.contact h2{font-size:clamp(34px,5vw,64px);line-height:1.02;max-width:11ch}
+.contact__sub{margin-top:18px;max-width:40ch;color:var(--on-dark-soft);font-size:16px}
+.contact__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,3vw,34px)}
+.contact__list{display:grid;gap:22px;align-content:start}
+.contact__list dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-soft);margin-bottom:6px}
+.contact__list dd{margin:0;font-size:clamp(16px,1.6vw,19px)}
+.contact__list a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;border-bottom:1px solid var(--line-dark);padding-bottom:2px;transition:border-color .3s}
+.contact__list a:hover{border-bottom-color:var(--on-dark)}
+@media (max-width:820px){.contact__inner{grid-template-columns:1fr}}
+
+/* ── footer ─────────────────────────────────────────── */
+.foot{background:var(--ink);color:var(--on-dark-soft);border-top:1px solid var(--line-dark)}
+.foot__inner{
+  display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  padding:26px 0;font-size:12px;letter-spacing:.04em;
+}
+.foot__mark{font-family:var(--font-display);font-size:16px;color:var(--on-dark);letter-spacing:.02em}
+
+/* ── lightbox ───────────────────────────────────────── */
+.lb{
+  position:fixed;inset:0;z-index:120;display:none;
+  background:rgba(10,9,7,.96);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+.lb.is-open{display:grid;grid-template-rows:1fr auto}
+.lb__stage{position:relative;display:flex;align-items:center;justify-content:center;padding:clamp(10px,2.4vw,32px);min-height:0}
+.lb__img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.lb__bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px var(--gutter) 22px;color:var(--on-dark)}
+.lb__cap{font-size:13px;letter-spacing:.05em;color:var(--on-dark-soft)}
+.lb__ctrl{display:flex;gap:8px}
+.lb__btn{
+  width:48px;height:48px;border-radius:999px;border:1px solid var(--line-dark);
+  background:transparent;color:var(--on-dark);font-size:18px;cursor:pointer;line-height:1;
+  transition:background .25s,border-color .25s;
+}
+.lb__btn:hover{background:rgba(243,239,230,.12);border-color:var(--on-dark)}
+.lb__btn:disabled{opacity:.3;cursor:default}
+
+/* ── mobile call bar ────────────────────────────────── */
+.callbar{display:none}
+@media (max-width:760px){
+  .callbar{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:10px;
+    padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+    background:rgba(243,239,230,.96);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    border-top:1px solid var(--line);
+  }
+  .callbar .btn{flex:1;min-height:46px;padding:0 14px;font-size:12px}
+  body{padding-bottom:70px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .shot:hover img{transform:none}
+}
+</style>
 </head>
 <body>
-<header>
-  <a class="brand" href="#top">Дом на Невском</a>
-  <nav aria-label="Разделы сайта"><a href="#rooms">Интерьер</a><a href="#rates">Цены</a><a href="#sauna">Сауна</a><a href="#contacts">Контакты</a></nav>
-  <a class="topcall" href="tel:+79137203362">+7 (913) 720-33-62</a>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">Дом на Невском</a>
+  <nav class="nav__links" aria-label="Разделы страницы">
+    <a href="#house">Дом</a>
+    <a href="#prices">Цены</a>
+    <a href="#gallery">Фотографии</a>
+    <a href="#contact">Контакты</a>
+  </nav>
+  <a class="nav__phone" href="tel:+79137203362">
+    <svg class="nav__tel-ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="currentColor">
+      <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.2 1l-2.2 2.2z"/>
+    </svg>
+    <span class="nav__tel-text">+7 913&nbsp;720-33-62</span>
+  </a>
 </header>
+
 <main id="top">
-  <section class="hero" aria-labelledby="title">
-    <img src="assets/facade.png" alt="Фасад коттеджа «Дом на Невском»">
-    <div class="hero-inner">
-      <p class="label">Посуточная аренда · Новосибирск</p>
-      <h1 id="title">Дом на <span>Невском</span></h1>
-      <p class="subtitle">Коттедж</p>
+
+  <!-- hero: вид на здание -->
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero__img" src="assets/f35.jpg"
+         alt="Коттедж «Дом на Невском» со стороны двора: двухэтажный дом с мансардой, светлые стены, мощение и высокие ели"
+         fetchpriority="high">
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="hero__kicker">Новосибирск · улица Александра Невского, 30</p>
+      <h1 class="hero__title" id="hero-title">Дом на&nbsp;Невском</h1>
+      <p class="hero__sub">Коттедж</p>
+      <p class="hero__lede">Посуточная аренда коттеджа с бассейном, сауной и бильярдом — в черте города, до 30 гостей.</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid" href="#prices">Цены и бронь</a>
+        <a class="btn btn--ghost" href="#gallery">Смотреть фотографии</a>
+      </div>
     </div>
-    <div class="hero-bottom">
-      <a class="button" href="#contacts">Узнать о брони <span aria-hidden="true">↗</span></a>
-      <a class="down" href="#rates">Смотреть цены <span aria-hidden="true">↓</span></a>
-    </div>
-  </section>
-  <section class="scene" id="rooms">
-    <div class="scene-copy">
-      <p class="label">Проживание</p>
-      <h2>Остаться на ночь</h2>
-      <p>В коттедже 3 спальни и 6 спальных мест. Здесь можно провести вечер небольшой компанией или собраться большой группой.</p>
-      <p>В доме есть вся необходимая мебель и посуда.</p>
-    </div>
-    <figure><img src="assets/bedroom.png" alt="Спальня с двуспальной кроватью" loading="lazy"><figcaption>Спальня коттеджа</figcaption></figure>
-  </section>
-  <section class="wide-scene" id="sauna">
-    <img src="assets/pool.png" alt="Крытый бассейн в коттедже" loading="lazy">
-    <div class="wide-copy">
-      <p class="label">Отдых</p>
-      <h2>Сауна и бассейн</h2>
-      <p>В доме есть сауна и крытый бассейн.</p>
+    <div class="hero__meta">
+      <strong>4,7</strong>
+      531 оценка в 2ГИС
     </div>
   </section>
-  <section class="scene scene-reverse">
-    <div class="scene-copy">
-      <p class="label">Для компании</p>
-      <h2>Вечер с друзьями</h2>
-      <p>Поужинайте за общим столом, включите музыку или сыграйте в бильярд. На улице есть беседка и мангальная зона с мангалом и казаном.</p>
-    </div>
-    <figure><img src="assets/billiards.png" alt="Бильярдная с диваном и высокими окнами" loading="lazy"><figcaption>Бильярдная</figcaption></figure>
-  </section>
-  <section class="gallery" aria-labelledby="gallery-title">
-    <h2 id="gallery-title">В доме и во дворе</h2>
-    <div class="gallery-grid">
-      <figure><img src="assets/kitchen.png" alt="Кухня с плитой и холодильником" loading="lazy"><figcaption>Кухня</figcaption></figure>
-      <figure><img src="assets/dining.png" alt="Длинный сервированный стол" loading="lazy"><figcaption>Столовая</figcaption></figure>
-      <figure><img src="assets/sauna.png" alt="Парная с деревянными полками" loading="lazy"><figcaption>Сауна</figcaption></figure>
-      <figure><img src="assets/gazebo.png" alt="Застеклённая беседка среди деревьев" loading="lazy"><figcaption>Беседка</figcaption></figure>
-      <figure><img src="assets/grill.png" alt="Мангал под навесом во дворе" loading="lazy"><figcaption>Мангальная зона</figcaption></figure>
+
+  <!-- what it is -->
+  <section class="band" id="house">
+    <div class="wrap intro">
+      <div>
+        <p class="eyebrow">О доме</p>
+        <h2>Сутки, которые не хочется сокращать</h2>
+      </div>
+      <div class="intro__body">
+        <p>Коттедж на <strong>улице Александра Невского, 30</strong> — это аренда на сутки для компании, которая хочет собраться вместе: с бассейном и сауной в доме, бильярдом в гостиной и мангальной зоной во дворе.</p>
+        <p>Внутри — <strong>три спальни и шесть спальных мест</strong>, вся необходимая мебель и посуда. Приезжаете и заселяетесь: ничего не нужно докупать и привозить с собой.</p>
+        <p>Место подходит и маленькой компанией, и большой — <strong>до 30 гостей</strong>. Дом работает круглосуточно, по предварительному звонку.</p>
+      </div>
     </div>
   </section>
-  <section class="rates" id="rates">
-    <h2>Аренда посуточно</h2>
-    <dl>
-      <div><dt>Понедельник - четверг, воскресенье</dt><dd>20 000 ₽ / сутки</dd></div>
-      <div><dt>Пятница и суббота</dt><dd>27 000 ₽ / сутки</dd></div>
-    </dl>
-    <p>Стоимость рассчитана на компанию до 30 гостей. За каждого гостя сверх 30 доплата 500 ₽.</p>
-    <a class="button" href="#contacts">Узнать о брони <span aria-hidden="true">↗</span></a>
-  </section>
-  <section class="quote" aria-label="Отзыв гостя">
-    <p class="label">4,7 из 5 по оценкам в 2ГИС</p>
-    <blockquote>«Спасибо за тёплый приём! Отлично провели время»</blockquote>
-    <a href="https://2gis.ru/novosibirsk/firm/141265769388456/tab/reviews">М. В., отзыв в 2ГИС ↗</a>
-  </section>
-  <section class="contact" id="contacts">
-    <div><p class="label">Контакты</p><h2>Запланируйте визит</h2><p>Новосибирск, улица Александра Невского, 30</p><p>Круглосуточно, по предварительному звонку.</p></div>
-    <div class="contact-actions">
-      <a class="button" href="tel:+79137203362">+7 (913) 720-33-62 <span aria-hidden="true">↗</span></a>
-      <a href="https://wa.me/79139426470">Написать в WhatsApp ↗</a>
-      <a href="https://2gis.ru/novosibirsk/firm/141265769388456">Посмотреть на карте ↗</a>
+
+  <!-- facts -->
+  <section class="band--tight facts" aria-label="Ключевые цифры">
+    <div class="wrap">
+      <div class="facts__grid">
+        <div><span class="facts__num">30</span><span class="facts__label">гостей</span></div>
+        <div><span class="facts__num">3</span><span class="facts__label">спальни</span></div>
+        <div><span class="facts__num">6</span><span class="facts__label">спальных мест</span></div>
+        <div><span class="facts__num">24/7</span><span class="facts__label">по звонку</span></div>
+      </div>
     </div>
   </section>
+
+  <!-- prices -->
+  <section class="band" id="prices">
+    <div class="wrap">
+      <p class="eyebrow">Аренда посуточно</p>
+      <h2 style="font-size:clamp(30px,4vw,52px);max-width:16ch">Цена за сутки</h2>
+      <div class="prices">
+        <article class="price">
+          <p class="price__days">Понедельник — четверг, воскресенье</p>
+          <p class="price__value">20 000 ₽</p>
+          <p class="price__unit">за сутки</p>
+        </article>
+        <article class="price price--weekend">
+          <p class="price__days">Пятница — суббота</p>
+          <p class="price__value">27 000 ₽</p>
+          <p class="price__unit">за сутки</p>
+        </article>
+      </div>
+      <div class="note">
+        <span>Вместимость — до <b>30 гостей</b>.</span>
+        <span>Каждый следующий гость — <b>500 ₽</b>.</span>
+        <span>Бронь — по звонку, <b>круглосуточно</b>.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- amenities -->
+  <section class="band amen" id="amenities">
+    <div class="wrap">
+      <p class="eyebrow">В доме имеется</p>
+      <h2 style="font-size:clamp(30px,4vw,52px);max-width:18ch">Всё для вечера и для утра</h2>
+      <div class="amen__grid">
+        <div class="amen__item"><h3>Бассейн</h3><p>Крытый, в доме — рядом с зоной отдыха.</p></div>
+        <div class="amen__item"><h3>Сауна</h3><p>Выходит к бассейну, с душем рядом.</p></div>
+        <div class="amen__item"><h3>Бильярд</h3><p>Стол в гостиной, вокруг диваны.</p></div>
+        <div class="amen__item"><h3>Музыка</h3><p>Музыкальная система — можно включить своё.</p></div>
+        <div class="amen__item"><h3>Беседка</h3><p>Стеклянная, во дворе, с большим столом.</p></div>
+        <div class="amen__item"><h3>Мангальная зона</h3><p>Столы и мангал на улице, под навесом деревьев.</p></div>
+        <div class="amen__item"><h3>Казан</h3><p>На мангальной зоне — для плова и не только.</p></div>
+        <div class="amen__item"><h3>Мангал</h3><p>Свой, на территории — дрова и угли по договорённости.</p></div>
+      </div>
+      <p class="amen__foot">Вся необходимая мебель и посуда имеется. Отличное место для проведения времени как маленькой компанией, так и большой.</p>
+    </div>
+  </section>
+
+  <!-- gallery -->
+  <section class="band gallery" id="gallery">
+    <div class="wrap">
+      <div class="gallery__head">
+        <div>
+          <p class="eyebrow">Фотографии</p>
+          <h2>Комнаты и территория</h2>
+        </div>
+        <p class="gallery__hint">Нажмите на фото, чтобы открыть на весь экран</p>
+      </div>
+
+      <div class="grid-gallery" id="grid">
+        <button class="shot shot--w2 shot--h2" type="button" aria-label="Открыть фото: вид на дом со двора">
+          <img src="assets/f35.jpg" alt="Дом снаружи: двухэтажный коттедж с мансардой и высокими елями во дворе" loading="lazy">
+          <figcaption>Вид на дом со двора</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: бассейн">
+          <img src="assets/f24.jpg" alt="Крытый бассейн в доме, облицованный мозаикой, со ступенями и поручнями" loading="lazy">
+          <figcaption>Бассейн</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: бильярдная">
+          <img src="assets/f01.jpg" alt="Бильярдный стол в гостиной, диваны и окна с шторами" loading="lazy">
+          <figcaption>Бильярдная</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: сауна">
+          <img src="assets/f27.jpg" alt="Дверь в сауну, отделка деревом и камнем" loading="lazy">
+          <figcaption>Сауна</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: столовая">
+          <img src="assets/f03.jpg" alt="Столовая с длинным накрытым столом и стульями у окна" loading="lazy">
+          <figcaption>Столовая</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: зона отдыха у бассейна">
+          <img src="assets/f25.jpg" alt="Бассейн и зона отдыха с диванами под росписью на стенах" loading="lazy">
+          <figcaption>Зона отдыха у бассейна</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: кухня">
+          <img src="assets/f06.jpg" alt="Кухня с деревянными фасадами, техникой и обеденной зоной" loading="lazy">
+          <figcaption>Кухня</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: спальня">
+          <img src="assets/f13.jpg" alt="Спальня с двуспальной кроватью, картиной и окнами" loading="lazy">
+          <figcaption>Спальня</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: стеклянная беседка">
+          <img src="assets/f30.jpg" alt="Стеклянная беседка во дворе рядом с домом" loading="lazy">
+          <figcaption>Стеклянная беседка</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: беседка внутри">
+          <img src="assets/f31.jpg" alt="Внутри беседки: длинный стол, стулья, панорамные окна" loading="lazy">
+          <figcaption>Беседка внутри</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: мангальная зона">
+          <img src="assets/f32.jpg" alt="Мангальная зона во дворе: мангал, столы и беседка" loading="lazy">
+          <figcaption>Мангальная зона</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: холл">
+          <img src="assets/f17.jpg" alt="Холл с зеркальными дверями, ковром и картиной" loading="lazy">
+          <figcaption>Холл</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: беседка с качелями">
+          <img src="assets/f34.jpg" alt="Беседка с качелями и диваном на мощёном дворе" loading="lazy">
+          <figcaption>Беседка с качелями</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: детская площадка">
+          <img src="assets/f29.jpg" alt="Детская площадка с горкой и качелями на зелёной траве" loading="lazy">
+          <figcaption>Детская площадка</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: вторая спальня">
+          <img src="assets/f09.jpg" alt="Спальня с кроватью, зеркальным шкафом и картиной" loading="lazy">
+          <figcaption>Вторая спальня</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: бильярд у окон">
+          <img src="assets/f12.jpg" alt="Бильярдный стол у панорамных окон гостиной" loading="lazy">
+          <figcaption>Бильярд у окон</figcaption>
+        </button>
+        <button class="shot" type="button" aria-label="Открыть фото: двор и парковка">
+          <img src="assets/f28.jpg" alt="Мощёный двор перед домом, место для парковки автомобилей" loading="lazy">
+          <figcaption>Двор и парковка</figcaption>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- quote -->
+  <section class="band">
+    <div class="wrap quote">
+      <blockquote>
+        <p class="quote__stars" aria-label="Оценка 5 из 5">★★★★★</p>
+        <p class="q">«Это идеальное место, если хочется совместить отдых на природе с городским комфортом — находится это прямо в Новосибирске, но в очень тихом и живописном районе».</p>
+        <p class="quote__who">Надежда · отзыв в 2ГИС, 28 мая 2026</p>
+      </blockquote>
+      <div class="quote__side">
+        <b>245 отзывов</b>
+        средняя оценка 4,7 из 5 в 2ГИС
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="band contact" id="contact">
+    <div class="wrap contact__inner">
+      <div>
+        <h2>Забронировать дом</h2>
+        <p class="contact__sub">Позвоните — подскажем свободные даты и рассчитаем стоимость для вашей компании.</p>
+        <div class="contact__actions">
+          <a class="btn btn--solid" href="tel:+79137203362">+7 913 720-33-62</a>
+          <a class="btn btn--ghost" href="https://wa.me/79139426470" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <dl class="contact__list">
+        <div>
+          <dt>Адрес</dt>
+          <dd>улица Александра Невского, 30<br>Новосибирск, Калининский район</dd>
+        </div>
+        <div>
+          <dt>Телефоны</dt>
+          <dd><a href="tel:+79137203362">+7 913 720-33-62</a><br><a href="tel:+79139426470">+7 913 942-64-70</a></dd>
+        </div>
+        <div>
+          <dt>Часы</dt>
+          <dd>Круглосуточно, по предварительному звонку</dd>
+        </div>
+        <div>
+          <dt>Ещё</dt>
+          <dd><a href="https://vk.ru/club233167718" target="_blank" rel="noopener">Группа ВКонтакте</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
 </main>
-<footer><span>Дом на Невском</span><span>Посуточная аренда в Новосибирске</span></footer>
-<script src="motion.js"></script>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span class="foot__mark">Дом на Невском</span>
+    <span>Коттедж посуточно · Новосибирск, улица Александра Невского, 30</span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn--dark" href="tel:+79137203362">Позвонить</a>
+  <a class="btn btn--ghost" href="#prices" style="color:var(--ink);border-color:var(--line)">Цены</a>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
+  <div class="lb__stage">
+    <img class="lb__img" id="lbImg" src="" alt="">
+  </div>
+  <div class="lb__bar">
+    <p class="lb__cap" id="lbCap"></p>
+    <div class="lb__ctrl">
+      <button class="lb__btn" id="lbPrev" type="button" aria-label="Предыдущее фото">←</button>
+      <button class="lb__btn" id="lbNext" type="button" aria-label="Следующее фото">→</button>
+      <button class="lb__btn" id="lbClose" type="button" aria-label="Закрыть">✕</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  function onScroll() {
+    if (window.scrollY > 80) nav.classList.add('is-stuck');
+    else nav.classList.remove('is-stuck');
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var shots = Array.prototype.slice.call(document.querySelectorAll('#grid .shot'));
+  var lb = document.getElementById('lb'),
+      img = document.getElementById('lbImg'),
+      cap = document.getElementById('lbCap'),
+      prev = document.getElementById('lbPrev'),
+      next = document.getElementById('lbNext'),
+      close = document.getElementById('lbClose'),
+      index = 0,
+      lastFocus = null;
+
+  function show(i) {
+    if (!shots.length) return;
+    index = (i + shots.length) % shots.length;
+    var s = shots[index];
+    var source = s.querySelector('img');
+    img.src = source.currentSrc || source.src;
+    img.alt = source.alt;
+    cap.textContent = (index + 1) + ' / ' + shots.length + ' · ' + s.querySelector('figcaption').textContent;
+    prev.disabled = shots.length < 2;
+    next.disabled = shots.length < 2;
+  }
+  function open(i) {
+    lastFocus = document.activeElement;
+    show(i);
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    close.focus();
+  }
+  function shut() {
+    lb.classList.remove('is-open');
+    document.body.style.overflow = '';
+    img.removeAttribute('src');
+    if (lastFocus) lastFocus.focus();
+  }
+
+  shots.forEach(function (s, i) {
+    s.addEventListener('click', function () { open(i); });
+  });
+  close.addEventListener('click', shut);
+  prev.addEventListener('click', function () { show(index - 1); });
+  next.addEventListener('click', function () { show(index + 1); });
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb || e.target.classList.contains('lb__stage')) shut();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') shut();
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+})();
+</script>
 </body>
 </html>
-
-
